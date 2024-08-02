@@ -9,8 +9,8 @@ phases:
             - npm install -g @angular/cli
     pre_build:
         commands:
-            - echo S3 Bucket: $S3_BUCKET
-            - echo Cloudfront Distribution: $CLOUDFRONT_DISTRIBUTION
+            - echo S3 Bucket= $S3_BUCKET
+            - echo Cloudfront Distribution= $CLOUDFRONT_DISTRIBUTION
     build:
         commands:
             - echo Build started on `date`

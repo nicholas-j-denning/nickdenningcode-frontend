@@ -1,38 +1,40 @@
 <app-navbar />
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <h1 class="display-3">nickdenningart.com</h1>
-            <img src="nickdenningart.png" alt="Photo of nickdenningart.com" class="float-end rounded">
-            <p>
-                I made <a href="http://nickdenningart.com">nickdenningart.com</a> as a gallery for my algorithmic
-                fractal artwork.
-                Users can browse by tags and download high resolution versions or follow a link to buy a print in my
-                Shopify store.
-                The application also has an admin page which I use to upload new art. When I do, it also creates a
-                product with my
-                dropshipping print provider Printify using their HTTP API to make prints of that piece available in my
-                store.
-            </p>
-            <p>
-                The frontend is written with Angular and Bootstrap for a responsive experience that works well on mobile
-                or different screen sizes. It's hosted in S3 behind CloudFront for fast worldwide availability.
-            </p>
-            <p>
-                The backend is written in Java with Spring Boot and hosted on AWS Lambda.
-            </p>
-            <p>
-                Because I used a completely serverless scale-to-zero architecture with Lambda, S3, and DynamoDb, the app
-                costs
-                less than $2/month to run, with the largest cost being the domain name. It also can automatically scale
-                to any
-                number of users, even millions.
-            </p>
-            <p>
-                All infrastructure is provisioned as code using AWS Java CDK, including full CI/CD pipelines for the
-                frontend and backend
-                using CodeBuild.
-            </p>
+<div class="page">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="display-3">nickdenningart.com</h1>
+                <img src="nickdenningart.png" alt="Photo of nickdenningart.com" class="float-end rounded">
+                <p>
+                    I made <a href="http://nickdenningart.com">nickdenningart.com</a> as a gallery for my algorithmic
+                    fractal artwork.
+                    Users can browse by tags and download high resolution versions or follow a link to buy a print in my
+                    Shopify store.
+                    The application also has an admin page which I use to upload new art. When I do, it also creates a
+                    product with my
+                    dropshipping print provider Printify using their HTTP API to make prints of that piece available in my
+                    store.
+                </p>
+                <p>
+                    The frontend is written with Angular and Bootstrap for a responsive experience that works well on mobile
+                    or different screen sizes. It's hosted in S3 behind CloudFront for fast worldwide availability.
+                </p>
+                <p>
+                    The backend is written in Java with Spring Boot and hosted on AWS Lambda.
+                </p>
+                <p>
+                    Because I used a completely serverless scale-to-zero architecture with Lambda, S3, and DynamoDb, the app
+                    costs
+                    less than $2/month to run, with the largest cost being the domain name. It also can automatically scale
+                    to any
+                    number of users, even millions.
+                </p>
+                <p>
+                    All infrastructure is provisioned as code using AWS Java CDK, including full CI/CD pipelines for the
+                    frontend and backend
+                    using CodeBuild.
+                </p>
+            </div>
         </div>
     </div>
 </div>

@@ -4,7 +4,6 @@ phases:
         runtime-versions:
             nodejs: 22.0
         commands:
-            - echo Installing source NPM dependencies...
             - npm install
             - npm install -g @angular/cli
     pre_build:
@@ -13,12 +12,8 @@ phases:
             - echo Cloudfront Distribution= $CLOUDFRONT_DISTRIBUTION
     build:
         commands:
-            - echo Build started on `date`
             - ng build
     post_build:
          commands:
-            - echo Build completed on `date`
-            - echo Deploying to S3 bucket...
             - aws s3 sync dist/frontend/browser $S3_BUCKET
-            - echo Invalidating CloudFront cache...
             - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION --paths "/*"

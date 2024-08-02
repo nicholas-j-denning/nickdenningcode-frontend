@@ -3,3 +3,7 @@ img {
     height: auto;
     margin: 10px;
 }
+
+.page {
+    background-color: var(--main-bg-color);
+}

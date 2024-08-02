@@ -2,7 +2,7 @@ version: 0.2
 phases:
     install:
         runtime-versions:
-            nodejs: 22
+            nodejs: 22.0
         commands:
             - echo Installing source NPM dependencies...
             - npm install
@@ -14,10 +14,14 @@ phases:
     post_build:
          commands:
             - echo Build completed on `date`
-artifacts:
-    name: "."
-    namespaceType: NONE
-    files:
-        - '**/*'
-    base-directory: 'dist*'
-    discard-paths: yes
+            - echo Deploying to S3 bucket...
+            - aws s3 sync dist $S3_BUCKET
+            - echo Invalidating CloudFront cache...
+            - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION --paths "/*"
+# artifacts:
+#     name: "."
+#     namespaceType: NONE
+#     files:
+#         - '**/*'
+#     base-directory: 'dist*'
+#     discard-paths: yes
